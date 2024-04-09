@@ -1,0 +1,861 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.clearfix:before,.clearfix:after{
+    content: "";
+    display: table
+    
+
+}
+.clearfix:after{
+    clear: both;
+}
+
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.wrapper{
+    width: 100vw;
+  
+}
+
+/* 头部 */
+.header{
+
+    height: 62px;
+    /* background-color: rgba(255,255,255,0.1); */
+    /* animation: changeBackgroundColor 5s infinite; */
+    position: fixed;
+    z-index: 9999;
+
+}
+
+
+
+
+/* 导航 */
+.nav{
+    float: left;
+    height: 42px;
+    /* margin-left: 5px; */
+    /* background-color: green; */
+    margin-top: 10px;
+}
+
+.nav li {
+    float: left;
+    margin-right: 26px;
+
+}
+
+
+.nav li a {
+    
+    display: block;
+    padding: 0 9px;
+    height: 42px;
+    line-height: 42px;
+    /* border-bottom: 2px solid rgb(17, 0, 255); */
+
+    font-size: 18px;
+    color: #050505;
+
+}
+
+
+.nav li a:hover {
+    border-bottom: 2px solid #e1e9ed;
+
+}
+
+
+/* 中间模块 */
+.box1{
+    width: 100vw;
+    height: 1025px;
+    background-color: #D27D5B;
+    animation: changeBackgroundColor 5s infinite; /* 设置动画 */
+}
+@keyframes changeBackgroundColor {
+    0% {
+      background-color: #1CD3C0;
+    }
+    25%{
+        background-color: #F3C6C6;
+    }
+    50% {
+      background-color: #BF717A;
+    }
+    75%{
+        background-color: #D7A530;
+    }
+    100% {
+      background-color: #FE8181;
+    }
+}
+
+
+
+/* 拖尾效果 */
+.span1::before{
+    /* 定义：：before伪元素 */
+    /* 伪元素内容为空 */
+    content: "";
+    /* 绝对定位 */
+    position: absolute;
+    top: 50%;
+    /* 将伪元素向上移动50%自身高度，使其垂直居中 */
+    transform: translateY(-50%);
+    /* width: 1px;  */
+    /* /* height: 3px; */
+    /* 设置伪元素的背景为渐变色 */
+    background: linear-gradient(90deg,#F8F9FA,transparent);
+}
+
+
+/* 接下来分别为每一个流星设置位置，动画延迟时间，动画时长 */
+.span1:nth-child(1){  
+    top:0;
+    right: 0;
+    /* initial关键字用于设置css属性为它的默认值 */
+    left: initial;
+    /* 动画延迟时间 */
+    animation-delay: 0s;
+    /* 动画时长 */
+    animation-duration: 1s;
+
+}
+
+.span1{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 1px;
+    height: 1px;
+    background-color: #F8F9FA;
+    /* background-color: #fff; */
+    border-radius: 50%;
+    /* 发光效果 */
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.1),
+    0 0 0 8px rgba(255,255,255,0.1),
+    0 0 20px rgba(255,255,255,0.1);
+    /* 执行动画 */
+    animation: animate 6s linear infinite;
+
+}
+
+
+
+.span1:nth-child(2){
+    top: 0;
+    right: 80px;
+    left: initial;
+    animation-delay: 0.2s;
+    animation-duration: 3s;
+}
+
+.span1:nth-child(3){
+    top:80px;
+    right: 0;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+}
+
+
+
+.span1:nth-child(4){
+    top:0;
+    right:180px;
+    left:initial;
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+}
+
+.span1:nth-child(5){
+    top:0;
+    right:400px;
+    left: initial;
+    animation-delay: 0.8s;
+    animation-duration: 2.5s;
+
+}
+
+.span1:nth-child(6){
+    top:0;
+    right: 600px;
+    left: initial;
+    animation-delay: 1s;
+    animation-duration: 3s;
+
+}
+
+.span1:nth-child(7){
+    top:300px;
+    right: 0;
+    left: initial;
+    animation-delay: 1.2s;
+    animation-duration: 1.75s;
+
+
+}
+
+
+.span1:nth-child(8){
+    top:0;
+    right: 700px;
+    left: initial;
+    animation-delay: 1.4s;
+    animation-duration: 1.25s;
+}
+
+.span1:nth-child(9){
+    top:0;
+    right: 1000px;
+    left: initial;
+    animation-delay: 0.75s;
+    animation-duration: 2.25s;
+
+}
+
+
+/* 伪类选择器nth-child(10):选择第10个元素 */
+.span1:nth-child(10){  
+    top:0; 
+    right: 450px;
+    left:initial;
+    animation-delay: 2.75s;
+    animation-duration: 2.25s;
+}
+
+
+
+
+
+/* 流星划过动画 */
+@keyframes animate{
+
+    0%{
+        /* 表示元素进行旋转和不进行平移 */
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+    }
+    90%{
+        /* 不透明 */
+        opacity: 1;
+    }
+    100%{
+        /* 进行旋转和平移 */
+        transform: rotate(315deg) translateX(-1000px);
+        /* 完全透明 */
+        opacity: 0;
+    }
+
+}
+
+
+
+
+
+
+
+.box1 h1{
+    text-align: center;
+    font-size: 130px;
+    padding-top: 100px;
+    color: #fff;
+    font-weight: 100;
+}
+
+.box1 span{
+
+    color: #fff;
+    padding-left: 450px;
+    font-size: 20px;
+    /* float: left; */
+}
+
+.box1 .icon {
+
+    padding-left: 730px;
+    padding-top: 50px;
+  
+    /* padding-left: 100px; */
+   padding-bottom: 50px;
+   
+
+}
+
+.box1 .icon img{
+    width: 50px;
+    height: 50px;
+    padding-left: 10px;
+
+}
+
+
+.box1 .more {
+
+    border: 2px solid #F8F9FA;
+    margin-left: 760px;
+    margin-top: 150px;
+    font-size: 20px;
+    padding: 20px;
+    color: #F8F9FA;
+
+}
+
+
+/* ========================================== */
+
+.box2{
+    width: 100vw;
+    height: 562px;
+    background-color: #E9ECEF;
+   
+}
+
+
+.box2 .left img{
+    position: absolute;
+    /* float: left; */
+    border-radius: 100%;
+    margin-left: 200px;
+    margin-top: 140px;
+    width: 313px;
+    height: 276px;
+}
+
+.box2 .right h1{
+    position: absolute;
+    padding-left: 800px;
+    padding-top: 100px;
+    font-size: 60px;
+    font-weight: 100;
+  
+
+}
+
+
+.box2 .right span{
+    position: absolute;
+    padding-left: 600px;
+    padding-right: 250px;
+    padding-top: 240px;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 40px;
+
+}
+
+/* ========================================== */
+
+.box3{
+    background-color: #FFFFFF;
+    width: 100vw;
+    height: 700px;
+}
+
+.box3 h1{
+    font-size: 70px;
+    font-weight: 100;
+
+    margin-left: 750px;
+    padding-top: 100px;
+
+}
+
+.box3 .btn{
+    /* float: left; */
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+
+.box3 .btn button{
+    font-size: 20px;
+    background-color: #fff;
+    border: 1px solid #DEE2E6;
+    font-weight: 10;
+}
+
+
+
+.box3 .content{
+    margin-top: 50px;
+    /* width: 1074px;
+    height: 306px; */
+
+}
+/* #FFFFFF */
+
+
+.box3 .content li{
+    width: 480px;
+    height: 56px;
+    /* background-color: #007BFF; */
+    float: left;
+    margin-left: 210px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    
+}
+
+
+.box3 .content span{
+    width: 480px;
+    height: 16px;
+    background-color: #007BFF;
+    float: left;
+   
+    margin-top: 35px;
+    border-radius: 5px;
+    
+}
+
+.box3 .content .div1{
+    position: absolute;
+    background-color: #E9ECEF;
+    height: 16px;
+    width: 100px;
+    margin-top: 35px;
+    margin-left: 381px;
+    border-radius:0 5px 5px 0;
+}
+
+.box3 .content .div2{
+    position: absolute;
+    background-color: #E9ECEF;
+    height: 16px;
+    width: 90px;
+    margin-top: 35px;
+    margin-left: 391px;
+    border-radius:0 5px 5px 0;
+}
+
+.box3 .content .div3{
+    position: absolute;
+    background-color: #E9ECEF;
+    height: 16px;
+    width: 60px;
+    margin-top: 35px;
+    margin-left: 421px;
+    border-radius:0 5px 5px 0;
+}
+
+.box3 .content .div3{
+    position: absolute;
+    background-color: #E9ECEF;
+    height: 16px;
+    width: 60px;
+    margin-top: 35px;
+    margin-left: 421px;
+    border-radius:0 5px 5px 0;
+}
+
+
+.box3 .content .div4{
+    position: absolute;
+    background-color: #E9ECEF;
+    height: 16px;
+    width: 60px;
+    margin-top: 35px;
+    margin-left: 421px;
+    border-radius:0 5px 5px 0;
+}
+
+
+.box3 .content .div5{
+    position: absolute;
+    background-color: #E9ECEF;
+    height: 16px;
+    width: 60px;
+    margin-top: 35px;
+    margin-left: 421px;
+    border-radius:0 5px 5px 0;
+}
+
+
+.box3 .content .div6{
+    position: absolute;
+    background-color: #E9ECEF;
+    height: 16px;
+    width: 60px;
+    margin-top: 35px;
+    margin-left: 421px;
+    border-radius:0 5px 5px 0;
+}
+
+
+.box3 .content .div7{
+    position: absolute;
+    background-color: #E9ECEF;
+    height: 16px;
+    width: 60px;
+    margin-top: 35px;
+    margin-left: 421px;
+    border-radius:0 5px 5px 0;
+}
+
+.box3 .content .div8{
+    position: absolute;
+    background-color: #E9ECEF;
+    height: 16px;
+    width: 60px;
+    margin-top: 35px;
+    margin-left: 421px;
+    border-radius:0 5px 5px 0;
+}
+
+.box3 .content .div9{
+    position: absolute;
+    background-color: #E9ECEF;
+    height: 16px;
+    width: 60px;
+    margin-top: 35px;
+    margin-left: 421px;
+    border-radius:0 5px 5px 0;
+}
+
+.box3 .content .div10{
+    position: absolute;
+    background-color: #E9ECEF;
+    height: 16px;
+    width: 60px;
+    margin-top: 35px;
+    margin-left: 421px;
+    border-radius:0 5px 5px 0;
+}
+
+
+/* 
+.box3 .content li:nth-child(5n){
+    margin-right: 0;
+} */
+
+
+.box3 .content li h3{
+    padding-bottom: 20px;
+    position: absolute;
+    font-size: 24px;
+    color: #050505;
+    font-weight: 100;
+    /* margin-left: 210px; */
+    /* margin-top: 20px; */
+}
+
+
+.box3 .content li p {
+    padding: 0 20px;
+    font-size: 12px;
+    color: #999;
+}
+
+.box3 .content li span {
+    color: #ff7c2d;
+}
+
+
+
+
+
+.box3 .content2 {
+
+    position: absolute;
+    margin-left: 320px;
+    margin-top: 30px;
+
+}
+
+
+.box3 .content2 img{
+
+    position: absolute;
+    
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+/* .box .content2 li:nth-child(2){
+    margin-left: 1000px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================ */
+
+.box4{
+    background-color: #EDEDED;
+    width: 100vw;
+    height: 1040px;
+}
+
+.box4 h1{
+    margin-top: 100px;
+    margin-left: 210px;
+    padding-top: 120px;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+
+.box4 .t1{
+    width: 510px;
+    height: 320px;
+    background-color: #FFFFFF;
+    margin-left: 200px;
+    margin-top: 70px;
+    box-shadow: 0px 10px 30px grey; 
+    position: absolute;
+    border-radius: 5px;
+}
+
+
+.box4 .t2{
+    width: 510px;
+    height: 320px;
+    background-color: #FFFFFF;
+    margin-left: 800px;
+    margin-top: 70px;
+    box-shadow: 0px 10px 30px grey; 
+    position: absolute;
+    border-radius: 5px;
+}
+
+
+.box4 .t3{
+    width: 510px;
+    height: 320px;
+    background-color: #FFFFFF;
+    margin-left: 200px;
+    margin-top: 470px;
+    box-shadow: 0px 10px 30px grey; 
+    border-radius: 5px;
+    position: absolute;
+}
+
+
+.box4 .t4{
+    width: 510px;
+    height: 320px;
+    background-color: #FFFFFF;
+    margin-left: 800px;
+    margin-top: 470px;
+    box-shadow: 0px 10px 30px grey; 
+    position: absolute;
+    border-radius: 5px;
+}
+
+
+
+.box4  h2{
+    font-size: 20px;
+    margin-top: 40px;
+    margin-left: 40px;
+    /* font-weight: 300; */
+}
+
+.box4  h3{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 40px;
+    font-weight: 120;
+}
+
+.box4  button{
+    margin-left: 40px;
+    font-size: 20px;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+
+/* ================================ */
+
+
+.box5{
+    background-color: #FFFFFF;
+    width: 100vw;
+    height: 600px;
+}
+
+
+.box5 h1{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+.box5 .image img{
+    position: absolute;
+   
+    width: 262px;
+    height: 100px;
+    padding-left: 30px;
+}
+
+
+
+.box5 .image img:nth-child(1){
+    margin-left: 300px;
+    margin-top: 70px;
+}
+
+.box5 .image img:nth-child(2){
+    margin-left: 700px;
+    margin-top: 70px;
+}
+
+
+.box5 .image img:nth-child(3){
+    margin-left: 1100px;
+    margin-top: 70px;
+}
+
+.box5  .text li {
+
+    float: left;
+    margin-top: 300px;
+    font-size: 23px;
+    font-weight: 100;
+    /* margin-left:50px; */
+    line-height: 40px;
+
+
+}
+
+.box5 .text li:nth-child(1) {
+
+  
+    margin-left: 330px;
+    text-align: center;
+}
+
+
+
+.box5  .text li:nth-child(2) {
+
+  
+    margin-left: 150px;
+    text-align: center;
+
+}
+
+
+.box5  .text li:nth-child(3) {
+
+  
+    margin-left: 170px;
+    text-align: center;
+}
+
+
+
+/* ============================ */
+
+.box6{
+    background-color: #EDEDED;
+    width: 100vw;
+    height: 840px;
+}
+
+.box6 h1{
+    text-align: center;
+    padding-top: 100px;
+    font-size: 50px;
+    font-weight: 100;
+
+}
+
+.box6 li{
+
+    margin-left: 300px;
+    padding-top: 60px;
+    float: left;
+   
+}
+
+.box6 text{
+    margin-top: 200px;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 30px;
+}
+
+.box6 h3{
+    margin-left: 70px;
+    font-size: 30px;
+    font-weight: 100;
+  
+}
+
+.box6 img{
+    margin-top: 80px;
+    margin-left: 70px;
+}
+
+
+
+
+
+
+
+
+/* ============================ */
+
+.box7{
+    background-color: #F7F7F7;
+    width: 100vw;
+    height: 440px;
+}
+
+.box7 h1{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 60px;
+    font-weight: 100;
+    
+}
+
+.box7 text{
+    position: absolute;
+    text-align: center;
+    margin-left: 280px;
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+
+
